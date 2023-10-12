@@ -1,5 +1,8 @@
 bool point_in_rectangle(double x, double y) {
-    return false; // Not implementation
+    if ((x<=5)&&(x>=-5)&&(y<=5)&&(y>=-5))
+        return true;
+    else
+        return false;
 }
 
 bool point_in_square(double x, double y) {
