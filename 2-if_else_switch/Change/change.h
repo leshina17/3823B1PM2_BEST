@@ -1,8 +1,9 @@
 long long change(int a, int b, int c, int d){
-    if ((c)>=(a))
-        return ((c-a)*100+(d-b));
-    if ((c>b)
-        return 0;
+    long long change, r;
+    if ((c>a)||((c==a)&&(d>=b))){
+        r=(c-a)*100LL;
+        change=r+d-b;
+    }
     else 
-         return -1;
+        return -1;
 }
