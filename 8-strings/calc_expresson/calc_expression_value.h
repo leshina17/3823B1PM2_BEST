@@ -6,11 +6,10 @@ int calculate_expression(char exp[]){
     int arr[10];
     for (int i=0; i<strlen(exp); i+2){
         for (int j=0; j<10; j++){
-            if (i%2==0){
-                arr[j]=exp[i];
+            arr[j]=exp[i];
+            i+2;
             }
         }
-    }
     x=arr[0];
     for (int i=1; i<strlen(exp); i+2){
         for (int j=0; j<10; j++){
@@ -18,6 +17,8 @@ int calculate_expression(char exp[]){
                 x=x+arr[j+1];
             if (exp[i]=='-')
                 x=x-arr[j+1];
+            else 
+                return 0;
         }
     }
     return x;

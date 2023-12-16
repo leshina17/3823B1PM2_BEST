@@ -10,7 +10,7 @@ int scalar_product(int* vec1, int* vec2, int size){
         chis+=(vec1[i]*vec2[i]);
     }
     c=(double)chis/(sqrt(kv1 * kv2));
-    double t = acos(c)* 180 / 3.14159265;
+    double t = acos(c)* 180 / 3.14;
    
     return (int)t;
 }
