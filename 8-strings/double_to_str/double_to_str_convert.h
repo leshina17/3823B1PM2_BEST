@@ -1,6 +1,5 @@
 #include <math.h>
 #include <string.h>
 
-char* convert(double number){
-    return NULL;
+char* convert(double n){
 }
