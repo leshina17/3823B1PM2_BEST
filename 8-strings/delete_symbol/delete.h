@@ -2,13 +2,13 @@
 #include <string.h>
 
 void DelSymbol1(char *str, char sym){
-   int j=0;
+   int ii=0;
    for (int i=0; i<strlen(str); i++){
       if (str[i]!=sym){
-         str[j]=str[i];
-         j++;
+         str[ii]=str[i];
+         ii++;
       }
    }
-   str[j]='\0';
+   str[ii]='\0';
 }
 

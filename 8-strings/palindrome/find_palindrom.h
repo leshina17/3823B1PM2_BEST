@@ -1,5 +1,6 @@
 #include <math.h>
 #include <string.h>
+#include <stdlib.h>
 #include <ctype.h> //посмотреть пробелы
 
 int is_palindrom(char text[]){
@@ -7,21 +8,26 @@ int is_palindrom(char text[]){
     if (strlen(text)==0)
         return 1;
     int j=0;
+
+    char* lext = malloc(strlen(text));
+
     for (int i=0; i<strlen(text); i++){
-      if (text[i]!=0){
-         text[j]=text[i];
+      if ((lext[i]!=32) && (lext[i]==39)){
+         lext[j]=lext[i];
          j++;
       }
     }
-    text[j]='\0';
-    for (int i=0; i<((strlen(text))/2);i++){
-        if ((text[i]==text[strlen(text)-i-1]) 
-            || (text[i]==tolower(text[strlen(text)-i-1])) 
-            || (text[strlen(text)-i-1]==tolower(text[i])))
+    lext[j]='\0';
+    for (int i=0; i<((strlen(lext))/2);i++){
+        if ((lext[i]==lext[strlen(lext)-i-1]) 
+            || (lext[i]==tolower(lext[strlen(lext)-i-1])) 
+            || (lext[strlen(lext)-i-1]==tolower(lext[i])))
             c+=1;
     }
-    if (c==strlen(text)/2)
+    int rez=strlen(lext)/2;
+    free (lext);
+
+    if (c==rez)
         return 1;
-    else  
-        return 0;
+    return 0;
 }
